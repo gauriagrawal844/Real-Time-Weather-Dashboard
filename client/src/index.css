@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-sky-600 to-blue-500 min-h-screen font-sans; 
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-white/20 backdrop-blur-lg rounded-3xl shadow-lg border border-white/10; }
+  
+  .weather-card {
+    @apply glass-effect p-6 text-white animate-fade-in;  }
+  
+  .forecast-card {
+    @apply glass-effect p-4 transform transition-all duration-300 hover:scale-105 hover:shadow-lg animate-slide-up;  }
+
+  .weather-icon {
+    @apply w-16 h-16 drop-shadow-lg transition-transform duration-300 hover:scale-110;
+  }
+
+  .weather-detail {
+    @apply flex items-center gap-2 text-white/90;
+  }
+
+  .weather-value {
+    @apply font-medium text-white;
+  }
+
+  .search-input {
+    @apply w-full px-4 py-2 rounded-full bg-white/20 text-white placeholder-white/70 
+           focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300;
+  }
+
+  .search-button {
+    @apply px-6 py-2 rounded-full bg-white/20 text-white hover:bg-white/30 
+           transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-white/10 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/30 rounded-full hover:bg-white/40 transition-colors duration-300;
+}
+
+::selection {
+  @apply bg-sky-200 text-white;
+}
+
+* {
+  @apply transition-colors duration-200;
+}
